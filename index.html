@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia PDC · Carreira por Competência · Silvanio Gois</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #eef3f8;
+            color: #1c3142;
+            line-height: 1.5;
+            padding: 1.5rem;
+        }
+
+        .main-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2.5rem;
+            box-shadow: 0 30px 50px -20px rgba(39, 98, 141, 0.3);
+            overflow: hidden;
+        }
+
+        .header-pdi {
+            background-color: rgb(39, 98, 141);
+            padding: 2rem 3rem;
+            color: white;
+        }
+
+        .header-flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .foto-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .foto-perfil {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            background: #c0d8f0;
+        }
+
+        .nome-titulo h1 {
+            font-size: 2.5rem;
+            font-weight: 650;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .contato-whatsapp {
+            margin-left: auto;
+            background: rgba(255,255,255,0.15);
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .contato-whatsapp a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .contato-whatsapp i {
+            font-size: 1.8rem;
+        }
+
+        .conteudo {
+            padding: 3rem;
+        }
+
+        .capa-guia {
+            background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(39,98,141,0.2);
+            text-align: center;
+        }
+
+        .capa-guia h2 {
+            font-size: 2.2rem;
+            color: rgb(39,98,141);
+            margin-bottom: 1rem;
+        }
+
+        .capa-guia p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: #2c4053;
+        }
+
+        .selo {
+            display: inline-block;
+            background: rgb(39,98,141);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: rgba(39,98,141,0.2);
+            z-index: 0;
+        }
+
+        .timeline-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: white;
+            padding: 1rem 0.5rem;
+        }
+
+        .timeline-step .numero {
+            width: 50px;
+            height: 50px;
+            background: rgb(39,98,141);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .cultura-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .cultura-card {
+            background: #f8fafd;
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            border-left: 6px solid rgb(39,98,141);
+        }
+
+        .caminhos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .caminho-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: 0 15px 30px -12px rgba(39,98,141,0.15);
+            border: 1px solid #d9e6f5;
+            transition: 0.2s;
+        }
+
+        .caminho-card:hover {
+            transform: translateY(-5px);
+            border-color: rgb(39,98,141);
+        }
+
+        .caminho-titulo {
+            font-size: 1.5rem;
+            color: rgb(39,98,141);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .tag-cultura {
+            background: #ecf3fa;
+            color: rgb(39,98,141);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        .exemplo-real {
+            background: #fcf9f0;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 6px solid #f4b836;
+        }
+
+        .exemplo-real i {
+            color: #f4b836;
+            margin-right: 0.5rem;
+        }
+
+        .btn-acao {
+            background: rgb(39,98,141);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-pdi {
+            background: #dde9f5;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-pdi a {
+            color: rgb(39,98,141);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .workbook-place {
+            background: #f5f9ff;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 2px dashed rgb(39,98,141);
+        }
+
+        .workbook-place h3 {
+            color: rgb(39,98,141);
+            margin-bottom: 1rem;
+        }
+
+        .workbook-place textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: 1px solid #ccc;
+            font-family: 'Inter', sans-serif;
+            margin-top: 0.5rem;
+        }
+
+        .alerta {
+            background: #fff3e0;
+            border-left: 6px solid #e67e22;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        /* Botão voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgb(39,98,141);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: rgb(28, 70, 102);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 700px) {
+            .header-flex { flex-direction: column; align-items: flex-start; }
+            .contato-whatsapp { margin-left: 0; width: 100%; }
+            .conteudo { padding: 1.5rem; }
+            .timeline::before { display: none; }
+            .back-to-top { bottom: 1rem; right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <header class="header-pdi" id="topo">
+        <div class="header-flex">
+            <div class="foto-area">
+                <img src="Executivo_Silvanio_Gestor.PNG" class="foto-perfil" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22%23c0d8f0%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2265%22%20font-size%3D%2240%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3ES%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                <div class="nome-titulo">
+                    <h1>Silvanio Gois</h1>
+                    <span class="badge"><i class="fas fa-compass"></i> Gestão estratégica · Meritocracia prática</span>
+                </div>
+            </div>
+            <div class="contato-whatsapp">
+                <a href="https://wa.me/5513988301094" target="_blank"><i class="fab fa-whatsapp"></i> Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <!-- CAPA DO GUIA -->
+        <div class="capa-guia">
+            <h2> Guia de Desenvolvimento de Carreira (PDC)</h2>
+            <p><strong>Não é sobre diploma. É sobre entrega, cultura e meritocracia real.</strong><br>
+            Este guia respeita a cultura da sua empresa: se ela valoriza prática, vamos de prática. Se valoriza formação, vamos de formação. O caminho é definido por VOCÊ, gestor, baseado na pessoa e no contexto.</p>
+            <span class="selo"><i class="fas fa-check-circle"></i> múltiplos caminhos · uma só filosofia: evoluir quem merece</span>
+        </div>
+
+        <!-- LINHA DO TEMPO -->
+        <h2 style="color:rgb(39,98,141); margin-bottom:1rem;"> A jornada do PDC em 5 etapas</h2>
+        <div class="timeline">
+            <div class="timeline-step"><div class="numero">1</div>Diagnóstico da cultura</div>
+            <div class="timeline-step"><div class="numero">2</div>Mapeamento de sucessão</div>
+            <div class="timeline-step"><div class="numero">3</div>Escolha dos caminhos</div>
+            <div class="timeline-step"><div class="numero">4</div>Plano 70/20/10</div>
+            <div class="timeline-step"><div class="numero">5</div>Ritos e acompanhamento</div>
+        </div>
+
+        <!-- 1. DIAGNÓSTICO DA CULTURA (com roteiro prático) -->
+        <h2 class="titulo-secao" style="font-size:1.8rem; border-left:8px solid rgb(39,98,141); padding-left:1.2rem; margin-top:3rem;"> 1. Diagnóstico: qual é a cultura da sua empresa?</h2>
+        <p>Antes de qualquer plano, responda: <strong>o que realmente abre portas aqui?</strong></p>
+        
+        <div class="cultura-grid">
+            <div class="cultura-card">
+                <i class="fas fa-briefcase" style="font-size:2rem; color:rgb(39,98,141);"></i>
+                <h3 style="margin:1rem 0;">Cultura prática</h3>
+                <p>Aqui valorizamos quem entrega, independente de diploma. Promoções baseadas em resultados e capacidade de execução.</p>
+                <p><strong>Exemplo:</strong> diretor que começou no chão de fábrica e subiu pela competência.</p>
+            </div>
+            <div class="cultura-card">
+                <i class="fas fa-university" style="font-size:2rem; color:rgb(39,98,141);"></i>
+                <h3 style="margin:1rem 0;">Cultura acadêmica</h3>
+                <p>Aqui formação é pré-requisito. Para cargos de liderança, esperamos graduação/pós.</p>
+                <p><strong>Exemplo:</strong> vagas de gerência exigem MBA.</p>
+            </div>
+            <div class="cultura-card">
+                <i class="fas fa-balance-scale" style="font-size:2rem; color:rgb(39,98,141);"></i>
+                <h3 style="margin:1rem 0;">Cultura mista</h3>
+                <p>Aceitamos ambos: valorizamos formação, mas abrimos exceções para quem demonstra resultados excepcionais.</p>
+            </div>
+        </div>
+
+        <!-- Roteiro diagnóstico adicional -->
+        <div style="background:#ecf3fa; border-radius:1.5rem; padding:1.8rem; margin:2rem 0;">
+            <h3 style="color:rgb(39,98,141);"><i class="fas fa-clipboard-list"></i> Na dúvida? Responda com lápis e papel:</h3>
+            <ol style="margin:1rem 0 0 1.5rem;">
+                <li>Puxe os últimos 5 líderes promovidos: eles tinham diploma superior completo?</li>
+                <li>Reúna a equipe e pergunte: “Aqui, o que pesa mais na hora de uma promoção: entrega comprovada ou tempo de casa?”</li>
+                <li>Observe o último caso polêmico: alguém foi barrado por falta de formação mesmo entregando bem?</li>
+                <li>O discurso do CEO em reuniões geral valoriza “resultado” ou “formação acadêmica”?</li>
+            </ol>
+            <p style="margin-top:1rem;"><strong>Anote suas respostas:</strong> elas revelam a cultura real, não a do quadro de missão.</p>
+        </div>
+
+        <!-- 2. MAPA DE SUCESSÃO + 9BOX -->
+        <h2 class="titulo-secao" style="font-size:1.8rem; margin-top:3rem;"> 2. Mapa de sucessão (identifique as cadeiras)</h2>
+        <p>Liste os cargos críticos e quem pode ocupá-los, considerando a cultura da empresa. Use a matriz 9box para classificar desempenho vs potencial.</p>
+
+        <!-- Matriz 9box simplificada -->
+        <div style="overflow-x:auto; margin:2rem 0;">
+            <table style="width:100%; border-collapse:collapse; background:#f5faff; border-radius:1.5rem; overflow:hidden;">
+                <thead style="background:rgb(39,98,141); color:white;">
+                    <tr><th style="padding:1rem;">Desempenho \ Potencial</th><th>Baixo</th><th>Médio</th><th>Alto</th></tr>
+                </thead>
+                <tbody style="text-align:center;">
+                    <tr style="border-bottom:1px solid #ccc;"><td style="padding:1rem; background:#e1efff;"><strong>Alto</strong></td><td>Mantém / dá feedback</td><td>Fortalece com novos desafios</td><td style="background:#c8e6c9;">Pronto para promoção</td></tr>
+                    <tr style="border-bottom:1px solid #ccc;"><td style="padding:1rem; background:#e1efff;"><strong>Médio</strong></td><td>Acompanhar de perto</td><td>Desenvolvimento focado</td><td style="background:#fff9c4;">Plano intensivo + mentoria</td></tr>
+                    <tr><td style="padding:1rem; background:#e1efff;"><strong>Baixo</strong></td><td>Plano de melhoria ou realocação</td><td>Investigar causa</td><td>Alta potencial, mas precisa de fit</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1.5rem; margin:2rem 0;">
+            <div style="background:#f5faff; border-radius:1.5rem; padding:1.5rem;">
+                <h3 style="color:rgb(39,98,141);">Cadeira: Diretor Adm</h3>
+                <p><strong>Sucessor 1:</strong> Cláudio (gerente, 8 anos, sem graduação, mas entrega fenomenal) – 9box: alto/alto</p>
+                <p><strong>Sucessor 2:</strong> Mariana (gerente, 5 anos, com MBA) – 9box: alto/médio</p>
+                <p><span class="tag-cultura">cultura mista → ambos são candidatos</span></p>
+            </div>
+            <div style="background:#f5faff; border-radius:1.5rem; padding:1.5rem;">
+                <h3 style="color:rgb(39,98,141);">Cadeira: Gerente Comercial</h3>
+                <p><strong>Sucessor:</strong> Rafael (coordenador, 3 anos, técnico, top performer) – 9box: alto/alto</p>
+                <p><span class="tag-cultura">cultura prática → pronto em 12 meses com mentoria</span></p>
+            </div>
+        </div>
+
+        <!-- 3. MÚLTIPLOS CAMINHOS (incluindo intraempreendedor) -->
+        <h2 class="titulo-secao" style="font-size:1.8rem; margin-top:3rem;"> 3. Múltiplos caminhos para evoluir (você escolhe)</h2>
+        <p>Aqui não há trilha única. Para CADA pessoa, baseado na cultura e no perfil, escolha as alavancas certas.</p>
+
+        <div class="caminhos-grid">
+            <!-- Caminho 1: Prática pura -->
+            <div class="caminho-card">
+                <div class="caminho-titulo"><i class="fas fa-hard-hat"></i> Caminho da prática</div>
+                <p><strong>Para quem:</strong> colaboradores que aprendem fazendo, ou culturas que valorizam execução.</p>
+                <div class="tag-cultura">ideal para culturas práticas</div>
+                <ul style="margin:1.2rem 0 1rem 1.2rem;">
+                    <li>Projetos desafiadores fora da zona de conforto</li>
+                    <li>Rotação por áreas (job rotation)</li>
+                    <li>Substituição temporária do líder</li>
+                    <li>Participação em comitês estratégicos</li>
+                </ul>
+                <p><strong>Exemplo real:</strong> José, auxiliar, virou coordenador após liderar projeto de redução de custos. Sem curso superior, só entrega.</p>
+            </div>
+
+            <!-- Caminho 2: Formação acadêmica -->
+            <div class="caminho-card">
+                <div class="caminho-titulo"><i class="fas fa-graduation-cap"></i> Caminho da formação</div>
+                <p><strong>Para quem:</strong> empresas que exigem diploma, ou colaboradores que querem se formalizar.</p>
+                <div class="tag-cultura">ideal para culturas acadêmicas</div>
+                <ul style="margin:1.2rem 0 1rem 1.2rem;">
+                    <li>Bolsa técnica (operacional)</li>
+                    <li>Ajuda graduação (tático)</li>
+                    <li>Patrocínio MBA (estratégico)</li>
+                </ul>
+                <p><strong>Exemplo real:</strong> Empresa tradicional que só promove a gerente com pós. Patrocinamos 70% do curso.</p>
+            </div>
+
+            <!-- Caminho 3: Mentoria + networking -->
+            <div class="caminho-card">
+                <div class="caminho-titulo"><i class="fas fa-users"></i> Caminho da mentoria</div>
+                <p><strong>Para quem:</strong> precisa de visão política, networking, ou tem gaps de comportamento.</p>
+                <div class="tag-cultura">útil em qualquer cultura</div>
+                <ul style="margin:1.2rem 0 1rem 1.2rem;">
+                    <li>Mentoria com diretor ou conselheiro</li>
+                    <li>Shadowing (acompanhar líder no dia a dia)</li>
+                    <li>Participação em reuniões estratégicas</li>
+                </ul>
+                <p><strong>Exemplo real:</strong> Ana, coordenadora técnica, virou gerente após 1 ano de mentoria com VP.</p>
+            </div>
+
+            <!-- Caminho 4: Híbrido -->
+            <div class="caminho-card">
+                <div class="caminho-titulo"><i class="fas fa-mix"></i> Caminho híbrido</div>
+                <p><strong>Para quem:</strong> culturas mistas, ou pessoas com potencial mas sem base.</p>
+                <div class="tag-cultura">flexível</div>
+                <ul style="margin:1.2rem 0 1rem 1.2rem;">
+                    <li>70% prática (projetos)</li>
+                    <li>20% mentoria</li>
+                    <li>10% formação direcionada (cursos rápidos)</li>
+                </ul>
+                <p><strong>Exemplo real:</strong> Carlos, operacional, fez técnico noturno (empresa pagou) e ganhou projeto desafiador. Em 2 anos, coordenador.</p>
+            </div>
+
+            <!-- Caminho 5: Intraempreendedor (novo) -->
+            <div class="caminho-card">
+                <div class="caminho-titulo"><i class="fas fa-rocket"></i> Caminho intraempreendedor</div>
+                <p><strong>Para quem:</strong> tem perfil inovador, quer criar novos produtos/processos.</p>
+                <div class="tag-cultura">cultura prática ou mista</div>
+                <ul style="margin:1.2rem 0 1rem 1.2rem;">
+                    <li>Liderança de projetos de inovação</li>
+                    <li>Criação de novos fluxos ou produtos</li>
+                    <li>Participação em programas de ideação</li>
+                </ul>
+                <p><strong>Exemplo real:</strong> João propôs e implantou um novo fluxo de vendas que aumentou 20% de conversão – mesmo sem cargo formal, hoje age como gestor.</p>
+            </div>
+        </div>
+
+        <!-- EXEMPLOS REAIS AMPLIADOS -->
+        <div class="exemplo-real">
+            <i class="fas fa-lightbulb"></i> <strong>Caso real 1: cultura prática em ação</strong>
+            <p style="margin-top:0.8rem;">Uma indústria com <strong>cultura prática</strong> precisava de um novo gerente de produção. Dois candidatos:</p>
+            <ul style="margin-left:2rem;">
+                <li><strong>João:</strong> técnico, 10 anos de casa, conhece cada máquina, respeitado pelo time.</li>
+                <li><strong>Maria:</strong> recém-chegada, administradora com MBA, mas sem vivência de fábrica.</li>
+            </ul>
+            <p><strong>Decisão:</strong> João promovido com plano de mentoria em gestão de pessoas. Maria foi alocada em projeto estratégico para aprender a operação. <strong>Desfecho:</strong> João se desenvolveu, ganhou confiança na parte soft; após 1 ano, Maria assumiu supervisão de um novo projeto e hoje é gerente de planejamento. A cultura prática foi respeitada, e ambos cresceram.</p>
+        </div>
+
+        <div class="exemplo-real" style="border-left-color: #2c6b9e; background:#f0f7ff;">
+            <i class="fas fa-university"></i> <strong>Caso real 2: cultura acadêmica com ponte</strong>
+            <p style="margin-top:0.8rem;">Numa empresa de engenharia, o gerente técnico se aposentou. Havia um coordenador excepcional, sem diploma, e um engenheiro recém-contratado com MBA. A cultura era <strong>acadêmica</strong> – então a decisão foi: promovemos o engenheiro, mas colocamos o coordenador como seu braço direito, com plano de conclusão da graduação em 2 anos e mentoria direta do diretor. Hoje o coordenador é gerente e o engenheiro, diretor.</p>
+        </div>
+
+        <!-- 4. 70/20/10 COM EXEMPLO PREENCHIDO -->
+        <h2 class="titulo-secao" style="font-size:1.8rem; margin-top:3rem;"> 4. Monte o plano com a regra 70/20/10</h2>
+        <p>Distribua as ações escolhidas nos três pilares:</p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:2rem; margin:2rem 0;">
+            <div style="flex:1; min-width:200px; background:#ecf7f0; padding:1.5rem; border-radius:1.5rem;">
+                <span style="font-size:2.5rem; font-weight:700; color:rgb(39,98,141);">70%</span>
+                <h3>Prática</h3>
+                <p>Projetos, rotação, substituições, comitês</p>
+            </div>
+            <div style="flex:1; min-width:200px; background:#ecf2f7; padding:1.5rem; border-radius:1.5rem;">
+                <span style="font-size:2.5rem; font-weight:700; color:rgb(39,98,141);">20%</span>
+                <h3>Troca</h3>
+                <p>Mentoria, shadowing, feedback, networking</p>
+            </div>
+            <div style="flex:1; min-width:200px; background:#f7f0ec; padding:1.5rem; border-radius:1.5rem;">
+                <span style="font-size:2.5rem; font-weight:700; color:rgb(39,98,141);">10%</span>
+                <h3>Teoria</h3>
+                <p>Cursos, certificações, graduação (se fizer sentido)</p>
+            </div>
+        </div>
+
+        <div style="background:#eef3f8; border-radius:1.5rem; padding:1.8rem;">
+            <h4 style="color:rgb(39,98,141);">Exemplo prático (João, da produção):</h4>
+            <ul style="margin:1rem 0;">
+                <li><strong>70% prática:</strong> Liderar o projeto de implantação de uma nova linha (6 meses).</li>
+                <li><strong>20% troca:</strong> Mentoria quinzenal com o diretor industrial. Participar das reuniões de planejamento estratégico.</li>
+                <li><strong>10% teoria:</strong> Curso online de gestão de pessoas (40h) + workshop de feedback.</li>
+            </ul>
+        </div>
+
+        <!-- 5. RITOS DE PASSAGEM + COMUNICAÇÃO EXPLÍCITA -->
+        <h2 class="titulo-secao" style="font-size:1.8rem; margin-top:3rem;"> 5. Ritos de passagem (a meritocracia precisa ser vista)</h2>
+        <p>Quando alguém conquista uma promoção por mérito, a empresa precisa celebrar publicamente. Isso motiva o time e mostra que o sistema funciona.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; margin:2rem 0;">
+            <div style="text-align:center; padding:1.5rem;"><i class="fas fa-microphone-alt" style="font-size:2.5rem; color:rgb(39,98,141);"></i><h3>Anúncio em reunião</h3><p>Comunique a promoção para toda a área</p></div>
+            <div style="text-align:center; padding:1.5rem;"><i class="fas fa-award" style="font-size:2.5rem; color:rgb(39,98,141);"></i><h3>Certificado interno</h3><p>Reconhecimento formal da jornada</p></div>
+            <div style="text-align:center; padding:1.5rem;"><i class="fas fa-champagne-glasses" style="font-size:2.5rem; color:rgb(39,98,141);"></i><h3>Celebração com o time</h3><p>Happy hour ou coffee break</p></div>
+            <div style="text-align:center; padding:1.5rem;"><i class="fas fa-handshake" style="font-size:2.5rem; color:rgb(39,98,141);"></i><h3>Troca de crachá</h3><p>Simbólico, mas poderoso</p></div>
+        </div>
+
+        <div style="background:#e0f0fa; border-radius:1rem; padding:1.5rem; margin:1rem 0;">
+            <i class="fas fa-bullhorn" style="color:rgb(39,98,141);"></i> <strong>Na comunicação, seja explícito:</strong> “A promoção do João aconteceu porque ele liderou o projeto X, reduziu custos em Y% e nos últimos 2 anos formou 3 substitutos. Isso é o que esperamos de um líder aqui.” Isso evita a sensação de “apanhação” e mostra o que a empresa valoriza de fato.
+        </div>
+
+        <!-- CHECKLIST FINAL AMPLIADO -->
+        <div style="background:#f2f7fd; border-radius:2rem; padding:2rem; margin:3rem 0;">
+            <h3 style="color:rgb(39,98,141);">✔ Checklist do PDC meritocrático</h3>
+            <ul style="list-style:none; margin-top:1.5rem;">
+                <li style="margin-bottom:1rem;"><input type="checkbox"> O plano respeita a cultura da empresa (prática, acadêmica ou mista)?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> Os caminhos escolhidos combinam com o perfil da pessoa (não force diploma onde não é necessário)?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> As ações 70/20/10 estão balanceadas para a transição desejada?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> Já definimos mentoria/shadowing se for o caso?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> Há um rito de passagem planejado para celebrar a conquista?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> Estou deixando claro para a pessoa quais são as entregas esperadas nos próximos 6 meses?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> Existe alguma barreira invisível (gênero, idade, estilo pessoal) que pode estar influenciando minha escolha?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> O plano cabe na rotina da pessoa ou vai sobrecarregá-la?</li>
+                <li style="margin-bottom:1rem;"><input type="checkbox"> Como vou medir se as ações 70/20/10 estão gerando resultado? (ex.: feedback 360, indicadores)</li>
+            </ul>
+            <button class="btn-acao" onclick="alert('Guia aplicado com a filosofia meritocrática!');"><i class="fas fa-check-circle"></i> validar e seguir</button>
+        </div>
+
+        <!-- ALERTA: ARMADILHAS DA MERITOCRACIA -->
+        <div class="alerta">
+            <i class="fas fa-exclamation-triangle" style="color:#e67e22; font-size:1.8rem; margin-right:1rem;"></i>
+            <strong style="font-size:1.2rem;">Atenção: armadilhas da meritocracia</strong>
+            <p style="margin-top:0.5rem;">Meritocracia não é “salve-se quem puder”. Ela exige que as regras sejam claras, que todos tenham oportunidades reais de acesso e que o erro seja tolerado como aprendizado. Se o ambiente virar um vale-tudo, você perde os melhores talentos – eles vão embora ou se queimam.</p>
+        </div>
+
+        <!-- WORKBOOK / RESUMO EXECUTIVO -->
+        <div class="workbook-place">
+            <h3><i class="fas fa-pencil-alt"></i> Seu resumo executivo (preencha com sua equipe)</h3>
+            <p><strong>1. Cultura predominante:</strong> _________________________________</p>
+            <p><strong>2. Sucessores imediatos (nome/cadeira):</strong> _________________________________</p>
+            <p><strong>3. Caminhos escolhidos para cada um:</strong></p>
+            <textarea rows="4" placeholder="Ex: João → caminho híbrido (prática + mentoria); Maria → formação acadêmica..."></textarea>
+            <p><strong>4. Próximos ritos:</strong> _________________________________</p>
+            <p style="margin-top:1rem;"><em>Imprima esta página, rabisque e leve para a reunião de desenvolvimento.</em></p>
+        </div>
+
+        <!-- INSIGHT FINAL: SUCESSÃO INTERNA E CULTURA DE DONO -->
+        <div style="background: #1c3142; color: white; border-radius: 2rem; padding: 2.5rem; margin: 3rem 0; text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                <div style="font-size: 3rem;"><i class="fas fa-seedling"></i></div>
+                <div>
+                    <h3 style="font-size: 2rem; margin-bottom: 0.5rem; color: #ffd966;">🌱 Insight rápido: sucessão interna vs. “comprar pronto”</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.6;">Toda vez que você promove alguém de dentro, envia uma mensagem clara: <strong>“aqui cresce quem entrega e se desenvolve”</strong>. Isso gera motivação em cadeia, reduz a ansiedade do time e constrói <strong>cultura de dono</strong> – as pessoas passam a agir como sócias, porque enxergam futuro.</p>
+                    <p style="font-size: 1.2rem; margin-top: 1rem;">Contratar de fora pode trazer sangue novo, mas se for a regra, você desestimula quem está na linha de frente. Estudos mostram que o custo de uma contratação externa é 2x maior e o risco de desajuste cultural é real. Já a sucessão interna fortalece o engajamento, acelera a adaptação e mantém o conhecimento crítico dentro de casa.</p>
+                    <p style="font-size: 1.2rem; margin-top: 1rem; font-style: italic; color: #ffd966;">"O melhor motor de retenção é mostrar que o próximo líder já está aqui." – Silvanio Gois</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENSAGEM FINAL -->
+        <div style="background:rgb(39,98,141); color:white; border-radius:2rem; padding:2.5rem; text-align:center;">
+            <i class="fas fa-medal" style="font-size:3rem;"></i>
+            <p style="font-size:1.5rem; margin:1rem 0;">Promova quem entrega, não quem tem papel.<br>Use o diploma quando fizer sentido, mas nunca como única régua.</p>
+            <p>— Silvanio Gois</p>
+        </div>
+    </main>
+
+    <footer class="footer-pdi">
+        <span>© 2026 Silvanio Gois - Todos os direitos reservados</span>
+        <a href="https://www.silvaniogois.com.br/" target="_blank"><i class="fas fa-external-link-alt"></i> ir ao Site</a>
+    </footer>
+</div>
+
+<!-- Botão Voltar ao Topo -->
+<div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+    // Botão voltar ao topo - aparece ao rolar
+    window.onscroll = function() {
+        var btn = document.getElementById('backToTop');
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
