@@ -34,36 +34,29 @@
 
         .header-pdi {
             background-color: rgb(39, 98, 141);
-            padding: 2rem 3rem;
+            padding: 1.5rem 3rem;
             color: white;
         }
 
         .header-flex {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             gap: 2rem;
         }
 
-        .foto-area {
+        /* Área da esquerda com nome, título e contato */
+        .header-info {
+            flex: 1;
             display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .foto-perfil {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            background: #c0d8f0;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
         .nome-titulo h1 {
             font-size: 2.5rem;
             font-weight: 650;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
         }
 
         .badge {
@@ -71,28 +64,58 @@
             padding: 0.4rem 1.4rem;
             border-radius: 40px;
             display: inline-block;
-            margin-top: 0.5rem;
+            font-size: 1rem;
         }
 
         .contato-whatsapp {
-            margin-left: auto;
-            background: rgba(255,255,255,0.15);
-            padding: 0.7rem 2rem;
-            border-radius: 60px;
-            border: 1px solid rgba(255,255,255,0.3);
+            margin-top: 0.25rem;
         }
 
         .contato-whatsapp a {
             color: white;
             text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.8rem;
             font-size: 1.2rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contato-whatsapp a:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
         }
 
         .contato-whatsapp i {
             font-size: 1.8rem;
+        }
+
+        /* Área da foto */
+        .foto-area {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .foto-perfil {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            background: #c0d8f0;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .foto-perfil:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: #ffd966;
         }
 
         .conteudo {
@@ -158,6 +181,15 @@
             z-index: 1;
             background: white;
             padding: 1rem 0.5rem;
+            transition: all 0.3s ease;
+            border-radius: 1rem;
+            cursor: default;
+        }
+
+        .timeline-step:hover {
+            background: #f0f8ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -8px rgba(39,98,141,0.3);
         }
 
         .timeline-step .numero {
@@ -174,6 +206,13 @@
             margin: 0 auto 1rem;
             border: 4px solid white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-step:hover .numero {
+            background: #ffd966;
+            color: #1c3142;
+            transform: scale(1.1);
         }
 
         .cultura-grid {
@@ -188,6 +227,15 @@
             border-radius: 1.5rem;
             padding: 1.8rem;
             border-left: 6px solid rgb(39,98,141);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .cultura-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(39,98,141,0.25);
+            background: white;
+            border-left-width: 8px;
         }
 
         .caminhos-grid {
@@ -203,12 +251,15 @@
             padding: 2rem;
             box-shadow: 0 15px 30px -12px rgba(39,98,141,0.15);
             border: 1px solid #d9e6f5;
-            transition: 0.2s;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+            cursor: default;
         }
 
         .caminho-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: rgb(39,98,141);
+            box-shadow: 0 30px 40px -15px rgba(39,98,141,0.3);
+            background: linear-gradient(to bottom, white, #f8fcff);
         }
 
         .caminho-titulo {
@@ -228,6 +279,12 @@
             font-size: 0.85rem;
             display: inline-block;
             margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .caminho-card:hover .tag-cultura {
+            background: rgb(39,98,141);
+            color: white;
         }
 
         .exemplo-real {
@@ -236,6 +293,14 @@
             padding: 1.5rem;
             margin: 1.5rem 0;
             border-left: 6px solid #f4b836;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .exemplo-real:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px -10px #f4b836;
+            background: #fffbf0;
         }
 
         .exemplo-real i {
@@ -252,10 +317,16 @@
             font-weight: 600;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .btn-acao:hover {
+            background: rgb(28, 70, 102);
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px -8px rgb(39,98,141);
         }
 
         .footer-pdi {
@@ -264,12 +335,23 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            transition: all 0.3s ease;
+        }
+
+        .footer-pdi:hover {
+            background: #cde0f0;
         }
 
         .footer-pdi a {
             color: rgb(39,98,141);
             text-decoration: none;
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-pdi a:hover {
+            color: #ffd966;
+            transform: translateX(5px);
         }
 
         .workbook-place {
@@ -278,6 +360,14 @@
             padding: 2rem;
             margin: 3rem 0;
             border: 2px dashed rgb(39,98,141);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .workbook-place:hover {
+            background: #ebf3ff;
+            border-style: solid;
+            box-shadow: 0 15px 30px -12px rgba(39,98,141,0.2);
         }
 
         .workbook-place h3 {
@@ -292,6 +382,14 @@
             border: 1px solid #ccc;
             font-family: 'Inter', sans-serif;
             margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .workbook-place textarea:focus {
+            border-color: rgb(39,98,141);
+            box-shadow: 0 0 0 3px rgba(39,98,141,0.2);
+            outline: none;
+            transform: scale(1.02);
         }
 
         .alerta {
@@ -300,6 +398,14 @@
             padding: 1.5rem;
             border-radius: 1rem;
             margin: 2rem 0;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .alerta:hover {
+            background: #ffefd5;
+            transform: scale(1.01);
+            box-shadow: 0 10px 25px -10px #e67e22;
         }
 
         /* Botão voltar ao topo */
@@ -332,15 +438,113 @@
 
         .back-to-top:hover {
             background: rgb(28, 70, 102);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Efeitos hover para cards de diagnóstico */
+        div[style*="background:#ecf3fa"] {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        div[style*="background:#ecf3fa"]:hover {
+            background: #dae9f5 !important;
             transform: translateY(-3px);
+            box-shadow: 0 15px 25px -10px rgba(39,98,141,0.2);
+        }
+
+        div[style*="background:#f5faff"] {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        div[style*="background:#f5faff"]:hover {
+            background: #e8f0fe !important;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -8px rgba(39,98,141,0.15);
+        }
+
+        /* Tabela 9box com hover */
+        table tr {
+            transition: all 0.2s ease;
+        }
+
+        table tr:hover td {
+            background: #e1efff !important;
+        }
+
+        /* Responsividade */
+        @media (max-width: 850px) {
+            .header-flex {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .header-info {
+                min-width: 280px;
+            }
+            
+            .nome-titulo h1 {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 700px) {
-            .header-flex { flex-direction: column; align-items: flex-start; }
-            .contato-whatsapp { margin-left: 0; width: 100%; }
-            .conteudo { padding: 1.5rem; }
-            .timeline::before { display: none; }
-            .back-to-top { bottom: 1rem; right: 1rem; }
+            .header-flex {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .header-info {
+                text-align: center;
+            }
+            
+            .badge {
+                display: block;
+                text-align: center;
+            }
+            
+            .contato-whatsapp a {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .foto-area {
+                justify-content: center;
+                order: -1;
+            }
+            
+            .conteudo {
+                padding: 1.5rem;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .caminho-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-pdi {
+                padding: 1.5rem;
+            }
+            
+            .foto-perfil {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .nome-titulo h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -348,15 +552,19 @@
 <div class="main-container">
     <header class="header-pdi" id="topo">
         <div class="header-flex">
-            <div class="foto-area">
-                <img src="Executivo_Silvanio_Gestor.PNG" class="foto-perfil" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22%23c0d8f0%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2265%22%20font-size%3D%2240%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3ES%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            <!-- Informações à esquerda -->
+            <div class="header-info">
                 <div class="nome-titulo">
                     <h1>Silvanio Gois</h1>
                     <span class="badge"><i class="fas fa-compass"></i> Gestão estratégica · Meritocracia prática</span>
                 </div>
+                <div class="contato-whatsapp">
+                    <a href="https://wa.me/5513988301094" target="_blank"><i class="fab fa-whatsapp"></i> Contato</a>
+                </div>
             </div>
-            <div class="contato-whatsapp">
-                <a href="https://wa.me/5513988301094" target="_blank"><i class="fab fa-whatsapp"></i> Contato</a>
+            <!-- Foto à direita -->
+            <div class="foto-area">
+                <img src="Executivo_Silvanio_Gestor.PNG" class="foto-perfil" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22%23c0d8f0%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%2265%22%20font-size%3D%2240%22%20text-anchor%3D%22middle%22%20fill%3D%22white%22%3ES%3C%2Ftext%3E%3C%2Fsvg%3E'">
             </div>
         </div>
     </header>
